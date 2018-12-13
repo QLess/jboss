@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  Log4j Configuration                                                  -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+<!-- $Id: jboss-log4j.xml 59399 2007-01-07 16:48:36Z dimitris@jboss.org $ -->
+<!--
+   | For more configuration infromation and examples see the Jakarta Log4j
+   | owebsite: http://jakarta.apache.org/log4j
+ -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+	<appender name="FILE" class="org.jboss.logging.appender.DailyRollingFileAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="File" value="${jboss.server.log.dir}/server.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.osuosl.logging.ANSIColorLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
+			<param name="All" value="[0;37m" />
+			<param name="Info" value="[0;37m" />
+			<param name="Defaultcolor" value="[0;37m" />
+		</layout>
+	</appender>
+	
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="Target" value="System.out" />
+		<param name="Threshold" value="INFO" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%c{1}] %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="ASTERISK" class="org.jboss.logging.appender.DailyRollingFileAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="File" value="${jboss.server.log.dir}/asterisk.log" />
+		<param name="Append" value="false" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="LASZLO" class="org.jboss.logging.appender.DailyRollingFileAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="File" value="${jboss.server.log.dir}/laszlo.log" />
+		<param name="Append" value="false" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="SQL" class="org.jboss.logging.appender.DailyRollingFileAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="File" value="${jboss.server.log.dir}/sql.log" />
+		<param name="Append" value="false" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="TOMCAT" class="org.jboss.logging.appender.DailyRollingFileAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="File" value="${jboss.server.log.dir}/tomcat.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="FORECAST" class="org.jboss.logging.appender.DailyRollingFileAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="File" value="${jboss.server.log.dir}/forecast.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="TIMING" class="org.jboss.logging.appender.DailyRollingFileAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="File" value="${jboss.server.log.dir}/timing.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d (%t) %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="FEDERATED_IDENTITY" class="org.jboss.logging.appender.DailyRollingFileAppender">
+		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+		<param name="File" value="${jboss.server.log.dir}/federatedIdentity.log" />
+		<param name="Append" value="false" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Threshold" value="DEBUG" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- root category -->
+	<root>
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+	<category name="com.linebuster">
+		<priority value="WARN" />
+	</category>
+	<category name="com.linebuster.common.util.system.procstat">
+		<priority value="INFO" />
+	</category>
+	<category name="com.linebuster.webui.api.v1.UIErrorLoggerResource">
+		<priority value="WARN" />
+	</category>
+	<category name="com">
+		<priority value="INFO" />
+	</category>
+	<category name="org">
+		<priority value="INFO" />
+	</category>
+	<category name="org.openlaszlo">
+		<priority value="FATAL" />
+	</category>
+	<category name="org.asteriskjava">
+		<priority value="FATAL" />
+	</category>
+	<category name="httpclient.wire">
+		<priority value="INFO" />
+	</category>
+	<!-- open laszlo -->
+	<category name="schema">
+		<priority value="INFO" />
+	</category>
+	<category name="postTransformation">
+		<priority value="INFO" />
+	</category>
+	<category name="preValidation">
+		<priority value="INFO" />
+	</category>
+	<category name="trace.cache">
+		<priority value="INFO" />
+	</category>
+	<!-- facelets -->
+	<category name="STDERR">
+		<priority value="FATAL" />
+	</category>
+	<category name="org.jboss.ejb3">
+		<priority value="WARN" />
+	</category>
+	<category name="org.jboss.ejb3.JmxKernelAbstraction">
+		<priority value="ERROR" />
+	</category>
+	<category name="org.jboss.resource.adapter.jdbc.xa.XAManagedConnectionFactory">
+		<priority value="FATAL" />
+	</category>
+	<category name="org.jboss.ejb3.security.RoleBasedAuthorizationInterceptor">
+		<priority value="FATAL" />
+	</category>
+	<category name="org.jboss.system.ServiceController">
+		<priority value="ERROR" />
+	</category>
+	<category name="org.jboss.mq.Connection">
+		<priority value="ERROR" />
+	</category>
+	<category name="org.hibernate">
+		<priority value="WARN" />
+	</category>
+	<category name="org.hibernate.impl.SessionFactoryObjectFactory">
+		<priority value="ERROR" />
+	</category>
+	<category name="com.linebuster.server.websocket.EventModuleBase">
+		<priority value="DEBUG" />
+	</category>
+	<category name="javax">
+		<priority value="WARN" />
+	</category>
+	<category name="sun">
+		<priority value="WARN" />
+	</category>
+	<category name="facelets">
+		<priority value="WARN" />
+	</category>
+	<!-- hibernate SQL generated queries -->
+	<!--<category name="org.hibernate.SQL"><priority value="DEBUG"/></category>-->
+	<category name="org.jgroups">
+		<priority value="WARN" />
+	</category>
+	<category name="jacorb">
+		<priority value="WARN" />
+	</category>
+	<category name="org.asteriskjava" additivity="false">
+		<priority value="DEBUG" />
+		<appender-ref ref="ASTERISK" />
+	</category>
+	<category name="org.openlaszlo" additivity="false">
+		<priority value="FATAL" />
+		<appender-ref ref="LASZLO" />
+	</category>
+	<category name="org.hibernate.SQL" additivity="false">
+		<priority value="DEBUG" />
+		<appender-ref ref="SQL" />
+	</category>
+	<category name="org.apache.catalina.core" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="TOMCAT" />
+	</category>
+	<category name="com.linebuster.server.FORECAST" additivity="false">
+		<priority value="WARN" />
+		<appender-ref ref="FORECAST" />
+	</category>
+	<category name="com.linebuster.webui.TimingFilter" additivity="false">
+		<priority value="WARN" />
+		<appender-ref ref="TIMING" />
+	</category>
+	<category name="com.linebuster.idp" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="FEDERATED_IDENTITY" />
+	</category>
+	<category name="com.linebuster.idp_db" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="FEDERATED_IDENTITY" />
+	</category>
+	<category name="com.linebuster.idp_ldap" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="FEDERATED_IDENTITY" />
+	</category>
+	<category name="com.linebuster.idp_base" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="FEDERATED_IDENTITY" />
+	</category>
+	<category name="com.linebuster.uiShared.filter.auth" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="FEDERATED_IDENTITY" />
+	</category>
+	<category name="QUEUE_PROCESSING_LOG" additivity="false">
+		<priority value="FATAL" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+	<category name="EVENT_SERVLET_ENDPOINTS" additivity="false">
+		<priority value="WARN" />
+	</category>
+	<category name="WEB_SOCKET_ENDPOINTS" additivity="false">
+		<priority value="WARN" />
+	</category>
+	<category name="com.arjuna.ats" additivity="false">
+		<priority value="ERROR" />
+	</category>
+</log4j:configuration>
