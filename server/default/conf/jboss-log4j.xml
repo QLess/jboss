@@ -111,7 +111,7 @@
 		<appender-ref ref="FILE" />
 	</root>
 	<category name="com.linebuster">
-		<priority value="WARN" />
+		<priority value="INFO" />
 	</category>
 	<category name="com.linebuster.common.util.system.procstat">
 		<priority value="INFO" />
