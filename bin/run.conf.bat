@@ -36,9 +36,9 @@ REM set JAVA_OPTS=%JAVA_OPTS% -Dcom.linebuster.salesNumber=16612684408
 
 set JAVA_OPTS=%JAVA_OPTS% -Dcom.linebuster.googleMapsKey=ABQIAAAAjUpGL9ccCekij5E7acs6ERQzhTJXthnkM2CPhp2BOWd0QJ30RBQHFOp3_3LwsSyJhrvGlz0gtppSlg
 
-set JAVA_OPTS=%JAVA_OPTS% -Djavax.net.ssl.keyStore=C:/dev/tools/qless-jboss/server/default/conf/qless_keystore.jks -Djavax.net.ssl.keyStorePassword=qlessqless
+set JAVA_OPTS=%JAVA_OPTS% -Djavax.net.ssl.keyStore=C:/jboss-4.2.3.GA/server/default/conf/qless_keystore.jks -Djavax.net.ssl.keyStorePassword=qlessqless
 
 REM FIXME QLess probably needs this, but Windows is being a pain about the pipe char... 
 REM JAD set JAVA_OPTS=%JAVA_OPTS% -Dcom.linebuster.WhiteListTestIP=66.135.41.245|69.174.245.201
 
-set JAVA_OPTS=%JAVA_OPTS% -Dcom.linebuster.server.keydb.location=C:\cygroot\asterisk\etc\qless\keydb.properties
+set JAVA_OPTS=%JAVA_OPTS% -Dcom.linebuster.server.keydb.location=C:\etc\qless\keydb.properties
