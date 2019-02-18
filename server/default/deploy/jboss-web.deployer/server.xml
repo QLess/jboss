@@ -19,6 +19,8 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL HTTP/1.1 Connector on port 8080-->
     <Connector port="8080" address="${jboss.bind.address}"    
+         keystoreFile="/usr/local/jboss/server/default/conf/qless_keystore.jks"
+         keystorePass="qlessqless"
          maxThreads="250" maxHttpHeaderSize="655360"
          emptySessionPath="true" protocol="HTTP/1.1"
          enableLookups="false" redirectPort="8443" acceptCount="100"
@@ -40,6 +42,8 @@
     <Connector port="8443" address="${jboss.bind.address}"
 						maxHttpHeaderSize="655360"
 						maxThreads="1000"
+         keystoreFile="/usr/local/jboss/server/default/conf/qless_keystore.jks"
+         keystorePass="qlessqless"
             SSLEnabled="true"
             scheme="https" secure="true"
             sslProtocol="SSLv3"
