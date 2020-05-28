@@ -83,6 +83,56 @@
 			<param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
 		</layout>
 	</appender>
+
+        <appender name="EVENT" class="org.jboss.logging.appender.DailyRollingFileAppender">
+                <errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+                <param name="File" value="${jboss.server.log.dir}/event.log" />
+                <param name="Append" value="true" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd" />
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                </layout>
+        </appender>
+
+        <appender name="UI_ERROR" class="org.jboss.logging.appender.DailyRollingFileAppender">
+                <errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+                <param name="File" value="${jboss.server.log.dir}/ui_error.log" />
+                <param name="Append" value="true" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd" />
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                </layout>
+        </appender>
+
+        <appender name="WEBSOCKET" class="org.jboss.logging.appender.DailyRollingFileAppender">
+                <errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+                <param name="File" value="${jboss.server.log.dir}/websocket.log" />
+                <param name="Append" value="true" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd" />
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                </layout>
+        </appender>
+
+        <appender name="BULK_CONSUMER_UPDATER" class="org.jboss.logging.appender.DailyRollingFileAppender">
+                <errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+                <param name="File" value="${jboss.server.log.dir}/bulk-consumer-updater.log" />
+                <param name="Append" value="true" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd" />
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                </layout>
+        </appender>
+
+        <appender name="SMS" class="org.jboss.logging.appender.DailyRollingFileAppender">
+                <errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
+                <param name="File" value="${jboss.server.log.dir}/sms.log" />
+                <param name="Append" value="true" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd" />
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                </layout>
+        </appender>
 	
 	<appender name="TIMING" class="org.jboss.logging.appender.DailyRollingFileAppender">
 		<errorHandler class="org.jboss.logging.util.OnlyOnceErrorHandler" />
@@ -253,4 +303,31 @@
 	<category name="com.arjuna.ats" additivity="false">
 		<priority value="ERROR" />
 	</category>
+        <category name="EVENT_LOG" additivity="false">
+                <appender-ref ref="EVENT" />
+        </category>
+
+        <category name="com.linebuster.webui.api.v1.UIErrorLoggerResource" additivity="false">
+                <appender-ref ref="UI_ERROR" />
+        </category>
+
+        <category name="WEBSOCKET" additivity="false">
+                <appender-ref ref="WEBSOCKET" />
+        </category>
+
+        <category name="com.linebuster.server.consumer.BulkConsumerUpdaterBean" additivity="false">
+                <appender-ref ref="BULK_CONSUMER_UPDATER" />
+        </category>
+
+        <category name="com.linebuster.smpp" additivity="false">
+                <appender-ref ref="SMS" />
+        </category>
+
+        <category name="com.linebuster.twilio.TwilioSMSSessionBean" additivity="false">
+                <appender-ref ref="SMS" />
+        </category>
+
+        <category name="com.linebuster.server.InboundSMSListener" additivity="false">
+                <appender-ref ref="SMS" />
+        </category>
 </log4j:configuration>
