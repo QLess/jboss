@@ -90,7 +90,7 @@
                 <param name="Append" value="true" />
                 <param name="DatePattern" value="'.'yyyy-MM-dd" />
                 <layout class="org.apache.log4j.PatternLayout">
-                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                	<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
                 </layout>
         </appender>
 
@@ -100,7 +100,7 @@
                 <param name="Append" value="true" />
                 <param name="DatePattern" value="'.'yyyy-MM-dd" />
                 <layout class="org.apache.log4j.PatternLayout">
-                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                	<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
                 </layout>
         </appender>
 
@@ -110,7 +110,7 @@
                 <param name="Append" value="true" />
                 <param name="DatePattern" value="'.'yyyy-MM-dd" />
                 <layout class="org.apache.log4j.PatternLayout">
-                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                	<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
                 </layout>
         </appender>
 
@@ -120,7 +120,7 @@
                 <param name="Append" value="true" />
                 <param name="DatePattern" value="'.'yyyy-MM-dd" />
                 <layout class="org.apache.log4j.PatternLayout">
-                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                	<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
                 </layout>
         </appender>
 
@@ -130,7 +130,7 @@
                 <param name="Append" value="true" />
                 <param name="DatePattern" value="'.'yyyy-MM-dd" />
                 <layout class="org.apache.log4j.PatternLayout">
-                        <param name="ConversionPattern" value="%d [%c] (%t) %m%n" />
+                	<param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
                 </layout>
         </appender>
 	
