@@ -225,9 +225,6 @@
 	<category name="org.hibernate.impl.SessionFactoryObjectFactory">
 		<priority value="ERROR" />
 	</category>
-	<category name="com.linebuster.server.websocket.EventModuleBase">
-		<priority value="DEBUG" />
-	</category>
 	<category name="javax">
 		<priority value="WARN" />
 	</category>
@@ -311,7 +308,7 @@
                 <appender-ref ref="UI_ERROR" />
         </category>
 
-        <category name="WEBSOCKET" additivity="false">
+        <category name="com.linebuster.server.websocket" additivity="false">
                 <appender-ref ref="WEBSOCKET" />
         </category>
 
