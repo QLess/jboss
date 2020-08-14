@@ -411,7 +411,10 @@
 	<category name="sun">
 		<priority value="WARN"/>
 	</category>
-
+ 
+	<category name="java.io.serialization">
+		<priority value="WARN"/>
+	</category>
 
 	<!-- root logger: logs at INFO level and above to the async server log by default - set additivity="false" for categories which log to different appenders
 		 to avoid double logging to more than a single log file -->
